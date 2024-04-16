@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ant Gamers Official Admin</title>
+</head>
+<body>
+ 
+ 
+ 
+ <input type="file" name="" id="inpFile">
+ 
+ 
+ <script type="module">
+  
+  // Firebase initializations
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBrkIb9Pv63NPop0UKYmAVZvnUFKlN4l4g",
+  authDomain: "ant-gamers-ofiicial.firebaseapp.com",
+  projectId: "ant-gamers-ofiicial",
+  storageBucket: "ant-gamers-ofiicial.appspot.com",
+  messagingSenderId: "243965040561",
+  appId: "1:243965040561:web:17eba4f8f9da5469d74f90"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const imgDb = getStorage(app);
+
+var inpFile = document.querySelector("#inpFile");
+
+inpFile.addEventListener('change', (e) => {
+  const file = e.target.files[0]; // Get the selected file
+  console.log('File selected:', file);
+
+  // For testing, let's try uploading the file directly to Firebase Storage without Firestore
+  const storageRef = sRef(imgDb,"Images/" + file.name);
+  
+  uploadBytesResumable(storageRef, file).then((snapshot) => {
+    console.log('File uploaded:', snapshot);
+  }).catch((error) => {
+    console.error('Error uploading file:', error);
+  });
+});
+
+
+
+
+
+
+
+
+
+  
+</script>
+</body>
+</html>

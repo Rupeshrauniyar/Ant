@@ -1,0 +1,282 @@
+
+@font-face {
+    font-family: neu;
+    src: url(./TT.ttf);
+}
+@font-face {
+    font-family: neu;
+    src: url(./all2.otf);
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: neu;
+}
+body{
+ background-color: #0F0D0D;
+ color: #fff;
+}
+
+nav{
+ width: 100%;
+ height: 10vh;
+ position: fixed;
+ z-index: 10;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ color: #fff;
+ padding: 10px 10px;
+ mix-blend-mode: difference;
+}
+
+
+
+
+
+
+
+
+nav i{
+ font-size: 20px;
+}
+nav img{
+ width: 40px;
+ height: 40px;
+ 
+}
+.page1{
+width: 100%; 
+min-height: 100vh;
+}
+
+.page1 h2{
+ padding: 10px 15px;
+}
+.page1ImgCont{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 60px 20px;
+}
+.page1ImgCont img{
+    width: 300px;
+    height: 300px;   
+    
+    
+    object-fit: cover;
+ 
+ }
+
+p,h3{ 
+ padding: 3px 10px;
+ text-transform:capitalize;
+
+}
+
+.AntDets{
+ padding: 35vh 0;
+ position:absolute;
+ top: 58vh;
+ z-index: 9;
+
+}
+.AntDets span{
+ opacity: 0;
+}
+
+
+.progress{ 
+position: absolute;
+ width: 20vw;
+ height: 10px;
+ border-radius: 8px;
+ background-color: #000;
+
+}
+.progressBar{
+ position: relative;
+ width: 0;
+ height: 10px;
+ border-radius: 8px;
+ background-color: #fff;
+}
+
+.page2{
+ width: 100%;
+ min-height:215vh;
+
+}
+
+
+.leaderDiv {
+  padding: 100px 0;
+  opacity: 0.1;
+}
+  
+ .AntDets img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  z-index: 9;
+  filter: hue-rotate(150deg)
+ }
+ .imgAndText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+.ownerImage{
+ width: 20%;
+ height: 20vh;
+ 
+ position: absolute;
+}
+.ownerImage img{
+ object-fit: cover;
+  width: 100%;
+ height: 100%;
+}
+.ownerName{
+ position: relative;
+ wwidth: 20%;
+ height: 20vh;
+ z-index: 8;
+
+ 
+}
+.ownerName h3{
+ color: #fff;
+ font-size: 15px;
+ font-family: "Carpenter";
+}
+.ownerContainer{
+ padding: 20px 0;
+ display: flex;
+ flex-wrap: wrap;
+
+}
+       .card {
+            width: 100px;
+            height: 200px;
+            background-color:#fff;
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card img {
+            width: 100%;
+            height:  70%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 10px;
+            height: 20px;
+            
+        }
+        
+        .card-content h2,h1 {
+            margin-top: 0;
+            color: #000;
+            text-align: center;
+            font-size: 15px;
+             overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+        }
+.owners{
+ padding: 20px 10px;
+ display: flex;
+align-items: center;
+justify-content: center;
+}
+.ownerContainer{
+align-items: center; 
+justify-content: center;
+}
+.loader{
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ background-color: #111;
+ z-index: 11; 
+ display: flex;
+ align-items: center;
+ justify-content:center ;
+ bottom: 0;
+}
+.number .h4{
+ 
+ overflow: hidden;
+}
+.number h3{
+ font-family:neu;
+}
+.number{
+ color: #fff;
+ font-size: 100px;
+}
+
+.page1Content{
+ display: flex;
+ flex-wrap: wrap;
+  word-spacing: 0;
+ letter-spacing: 0;
+  padding: 0 5px;
+}
+.page1ContentCont h2{
+ padding: 5px 10px;
+}
+.page1Content p{
+ line-height: 12px;
+ padding: 3px 3px; 
+}
+.page1ContentCont span{
+overflow: hidden; 
+}
+
+.AntDets h4{ 
+ overflow: hidden;
+} 
+
+.imgAndText h4{ 
+ overflow: hidden;
+} 
+
+.page3{
+ width: 100%;
+ height: 75vh;
+ background-color: #fff;
+ padding: 40px 0;
+ margin-top: 60px;
+ color: #000;
+}
+.page3 h2{
+ padding: 20px 10px;
+}
+.page3 p{
+ color: #000;  
+}
+.page3Content,{
+padding: 0px 3px; 
+font-weight: 400;
+margin-top: -9px;
+}
+
+.page3 h3{
+ font-size: 25px;
+ font-weight: 9000;
+}
+
+.page4{
+ width: 100%;
+ height: 100vh;
+ background-color: #fff;
+ color: #000;
+}
