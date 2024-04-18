@@ -143,7 +143,7 @@ background-color: #FFF;
 
 }
        .card {
-            width: 45%;
+            width: 55%;
             height: 35vh;
             background-color:#fff;
             color: white;
@@ -416,18 +416,23 @@ overflow: hidden;
 }
 .page6{
  width: 100%;
- height: 40vh;
+ height: 10vh;
  background-color: #fff;
  
 }
 .page6 h3{
  font-size: 25px;
+ color: #000;
 }
 .page6 p{
  color: #000;
 }
 .page6 a{
  text-decoration: none;
+}
+.page2 h3{
+ color: #000;
+ font-size: 35px;
 }
 
 footer{
@@ -455,8 +460,12 @@ footer{
  color: #fff;
  
 }
+.OrgServices h3{
+ font-size: 15px;
+}
 .OrgDets h3{
  color: #fff;
+ font-size: 15px;
 }
 .OrgDets p{
  color: #fff;

@@ -68,16 +68,7 @@ ownerClutter +=
 })
 ownersCont.innerHTML=ownerClutter;
 
-let tl1 = gsap.timeline({
-scrollTrigger : {
-trigger:'.AntDets',
-scroller:"main",
-start:'200vh top',
-end:'2700vh 10vh',
-scrub:2,
-pin:true,
-}
-})
+
     gsap.from(".page1Content p", {
         y: 100,        
         ease: "power4.inOut",
@@ -120,25 +111,15 @@ opacity:0,
 
 
 
-tl1.to('.progressBar',{
-opacity:1,
-width:"100%",
-},"same")
- 
-
-
-tl1.to('.imgAndText img',{
-rotate:900,
-},"same")
 
 
 
 let tl2 = gsap.timeline({
 scrollTrigger : {
-trigger:'.AntDets',
+trigger:'.page2',
 scroller:"main",
-start:'350vh 600vh',
-end:'350vh 600vh',
+start:'3100vh 600vh',
+end:'3100vh 600vh',
 scrub:4,
 }
 },"same")
@@ -168,16 +149,7 @@ ease:"power4.inOut",
 opacity:0,
 })
 
-gsap.from('.AntDets p,.AntDets h3,.imgAndText',{
-y:50, 
-opacity:0,
-stagger:{
- amount:0.5,
-},
-ease:"power4.inOut",
-delay:4.8,
-duration:2
-})
+
 
 gsap.to(".loader",{
 y:"-1000%", 
