@@ -1,36 +1,5 @@
 
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("main"),
-  smooth: true
-});
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-
-ScrollTrigger.scrollerProxy("main", {
-  scrollTop(value) {
-    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-  }, 
-  getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-  },
-
-  pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
-});
-
-
-
-
-
-
-
-
-
 var ownerArr = 
 [
 {img:"https://antorgnepal.com/wp-content/uploads/2024/03/sabin-768x1024.jpg",title:"Leader",name:"Sabin Timalsina"},
@@ -51,18 +20,21 @@ var ownerClutter="";
 ownersDivs.forEach(ownersDiv =>{
 ownerArr.forEach(item =>{
 ownerClutter += 
-` <div class="owners">
-<div class="card">
- <div class="cardImg">
-    <img src="${item.img}" alt="${item.name}">
-    </div>
-    <div class="card-content">
-       <h1>${item.name}</h1>
-        <h2>${item.title}</h2>
-        
-    </div>
+      
+`<div class="TeamLeaderCont">
+<div class="TeamImgLeaderCont">
+<img src="${item.img}" alt="">
+</div>
+<div class="textCont">
+<div class="TeamLeaderText">
+<i class="ri-id-card-fill"></i><h4>${item.name}</h4>
+</div>
+<div class="position">
+ <p>${item.title}</p>
 </div>
 </div>
+</div>
+
 ` 
 })
 })
@@ -106,39 +78,6 @@ duration:2,
 opacity:0,
  delay:4.8,
 })
-
-
-
-
-
-
-
-
-let tl2 = gsap.timeline({
-scrollTrigger : {
-trigger:'.page2',
-scroller:"main",
-start:'3100vh 600vh',
-end:'3100vh 600vh',
-scrub:4,
-}
-},"same")
-
-
-tl2.from('.owners',{
-y:"300px", 
-stagger:{
-amount:0.5,
-},
-opacity:0,
-},"same2")
-
-
-
-
-
-
-
 gsap.from('.number h3',{
 y:150, 
 duration:2,
@@ -162,7 +101,7 @@ delay:4,
 })
 
 gsap.to(".LoaderprogressBar",{
-duration:6,
+duration:5,
 width:"100%",
 ease:"power4.inOut",
 stagger:{
@@ -214,6 +153,12 @@ gsap.to(".barPage",{
 },
 ease:"power4.inOut",
 })  
+gsap.from(".barPage h3",{
+ y:50,
+ duration:1,
+ opacity:0,
+ease:"power4.inOut",
+})  
  }
  else {
 gsap.to(".barPage",{
@@ -229,3 +174,22 @@ barFlag=0;
 bar.classList="ri-menu-line"; 
  }
 })
+
+
+var barH3s = document.querySelectorAll('.barPage h3');
+
+barH3s.forEach(barH3 => {
+barH3.addEventListener("click",function(){
+gsap.to(".barPage",{
+ opacity:0,
+ duration:0.5,
+ display:"none",
+ stagger:{
+ amount:0.2,
+},
+ease:"power4.inOut",
+})  
+barFlag=0; 
+bar.classList="ri-menu-line"; 
+ })
+ })

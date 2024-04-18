@@ -21,3 +21,24 @@ body{
 #upload{
  display: none;
 }
+
+
+form{
+padding: 40px;
+}
+input{
+width: 80%; 
+padding: 0 30px;
+height: 5vh;
+outline: none;
+margin: 5px;
+border-radius: 2px;
+}
+
+
+#LabelUpload{
+
+ padding: 10px;
+ border-radius: 10px;
+ background-color: #a5ff80;
+}

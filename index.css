@@ -115,7 +115,7 @@ position: absolute;
 
 .page2{
  width: 100%;
- min-height:100vh;
+ min-height:50vh;
 background-color: #FFF;
 }
 
@@ -139,79 +139,28 @@ background-color: #FFF;
  }
 
 .ownerContainer{
- padding: 20px 0;
+ display: flex;
+ flex-wrap: wrap;
+ color: #000;
 
 }
-       .card {
-            width: 55%;
-            height: 35vh;
-            background-color:#fff;
-            color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 1px #000;
-            
-        }
+       
+ .textCont p{
+  color: #000;
+  text-align: center;
+ }       
         
-        .cardImg {
-            width: 95%;
-            height:  80%;   
-           display: flex;
-           align-items: center; 
-           justify-content: center;
-           
-        }
-.cardImg img{
-            width: 95%;
-            height:  100%;
-            object-fit: cover;             
-            border-radius: 10px;
-            margin-left: 5px;
-            margin-top: 20px;
-}        
-        .card-content {
-           margin-top: 15px;
-            height: 70px;
-            
-        }
-        
-        .card-content h2,h1 {
-            margin-top: 0;
-            color: #000;
-            text-align: center;            
-            font-size: 15px;
-             overflow: hidden;
- white-space: nowrap;
- text-overflow: ellipsis;
-        }
-.owners{
- padding: 5px 0;
- 
-}
-.owners:nth-child(2){
- margin-left: 20vw;
-}
-.owners:nth-child(4){
- margin-left: 20vw;
-}
-.owners:nth-child(6){
- margin-left: 20vw;
-}
-.owners:nth-child(8){
- margin-left: 20vw;
-}
-.loader{
- width: 100%;
- height: 100%;
- position: fixed;
- background-color: #111;
- z-index: 11; 
- display: flex;
- align-items: center;
- justify-content:center ;
- flex-direction: column;
- 
-}
+ .loader{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 20;
+ }
 .LoaderprogressCont{
  margin-top: 20px;
  display: flex;
@@ -223,9 +172,23 @@ position: absolute;
  width: 80vw;
  height: 10px;
  border-radius: 8px;
- background-color: #000;
+ background-color: #222;
 
 }
+.barPage a{
+ margin-top: 10px;
+  display: flex;
+ align-items: center;
+ text-decoration: none;
+ color: #fff;
+}
+.barPage h3{
+ font-size: 23px;
+}
+.dontDisplay{
+ opacity: 0;
+ pointer-events: none;
+} 
 .LoaderprogressBar{
  position: relative;
  width: 0;
@@ -278,7 +241,7 @@ overflow: hidden;
 
 .page3{
  width: 100%;
- height: 75vh;
+ min-height: 75vh;
  background-color: #fff;
  padding: 40px 0;
  margin-top: 60px;
@@ -303,7 +266,7 @@ margin-top: -9px;
 
 .page4{
  width: 100%;
- height: 30vh;
+ min-height: 30vh;
  background-color: #fff;
  color: #000;
  text-align: center;
@@ -323,10 +286,12 @@ margin-top: -9px;
  opacity: 0;
  background-color: #0F0D0D;
  z-index: 10;
+padding: 80px 20px;
+ 
 }
 .page5{
  width: 100%;
-min-height: 100vh;
+ min-height: 100vh;
  background-color: #fff;
 }
 
@@ -416,7 +381,7 @@ overflow: hidden;
 }
 .page6{
  width: 100%;
- height: 10vh;
+ min-height: 10vh;
  background-color: #fff;
  
 }
@@ -437,7 +402,7 @@ overflow: hidden;
 
 footer{
  width: 100%;
- height: 50vh;
+ min-height: 50vh;
  background-color: #37415A;
  display: flex;
  align-items: center;
@@ -477,21 +442,6 @@ footer{
 .TeamCont h4{
  color: #000;
 }
-@media (min-height: 1050px) {
-  .card {
-    width: 80%;
-    height: 90vh;
-  }
-
-@media (min-height: 750px) {
-  .card {
-    width: 75%;
-    height: 70vh;
-  }
-  
-  @media (min-height: 480px) {
-  .card {
-    width: 90%;
-    height: 50vh;
-  }
+.TeamLeaderCont{
+ height: 220px;
 }
