@@ -13,12 +13,17 @@
  padding: 0;
  box-sizing: border-box;
  font-family: neu;
+ scroll-behavior: smooth;
 }
 body{
  background-color: #0F0D0D;
  color: #fff;
+ scroll-behavior: smooth;
 }
-
+nav a{
+ text-decoration: none;
+ color: #fff;
+}
 nav{
  width: 100%;
  height: 10vh;
@@ -32,7 +37,9 @@ nav{
  mix-blend-mode: difference;
 }
 
-
+#bar{
+ transition: all .33s ease;
+}
 
 
 
@@ -40,7 +47,8 @@ nav{
 
 
 nav i{
- font-size: 20px;
+ font-size: 30px;
+ margin-left: 15px;
 }
 nav img{
  width: 40px;
@@ -77,11 +85,12 @@ p,h3{
 }
 
 .AntDets{
- padding: 35vh 0;
+ padding: 32vh 0;
  position:absolute;
  top: 58vh;
  z-index: 9;
-
+ color: #000;
+ mix-blend-mode: difference;
 }
 .AntDets span{
  opacity: 0;
@@ -106,8 +115,8 @@ position: absolute;
 
 .page2{
  width: 100%;
- min-height:215vh;
-
+ min-height:100vh;
+background-color: #FFF;
 }
 
 
@@ -121,84 +130,75 @@ position: absolute;
   height: 50px;
   object-fit: cover;
   z-index: 9;
-  filter: hue-rotate(150deg)
+  filter: hue-rotate(150deg);
  }
  .imgAndText{
   display: flex;
   align-items: center;
   justify-content: center;
  }
-.ownerImage{
- width: 20%;
- height: 20vh;
- 
- position: absolute;
-}
-.ownerImage img{
- object-fit: cover;
-  width: 100%;
- height: 100%;
-}
-.ownerName{
- position: relative;
- wwidth: 20%;
- height: 20vh;
- z-index: 8;
 
- 
-}
-.ownerName h3{
- color: #fff;
- font-size: 15px;
- font-family: "Carpenter";
-}
 .ownerContainer{
  padding: 20px 0;
- display: flex;
- flex-wrap: wrap;
 
 }
        .card {
-            width: 100px;
-            height: 200px;
+            width: 45%;
+            height: 35vh;
             background-color:#fff;
             color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 1px #000;
+            
         }
         
-        .card img {
-            width: 100%;
-            height:  70%;
-            display: block;
-            object-fit: cover;
+        .cardImg {
+            width: 95%;
+            height:  80%;   
+           display: flex;
+           align-items: center; 
+           justify-content: center;
+           
         }
-        
+.cardImg img{
+            width: 95%;
+            height:  100%;
+            object-fit: cover;             
+            border-radius: 10px;
+            margin-left: 5px;
+            margin-top: 20px;
+}        
         .card-content {
-            padding: 10px;
-            height: 20px;
+           margin-top: 15px;
+            height: 70px;
             
         }
         
         .card-content h2,h1 {
             margin-top: 0;
             color: #000;
-            text-align: center;
+            text-align: center;            
             font-size: 15px;
              overflow: hidden;
  white-space: nowrap;
  text-overflow: ellipsis;
         }
 .owners{
- padding: 20px 10px;
- display: flex;
-align-items: center;
-justify-content: center;
+ padding: 5px 0;
+ 
 }
-.ownerContainer{
-align-items: center; 
-justify-content: center;
+.owners:nth-child(2){
+ margin-left: 20vw;
+}
+.owners:nth-child(4){
+ margin-left: 20vw;
+}
+.owners:nth-child(6){
+ margin-left: 20vw;
+}
+.owners:nth-child(8){
+ margin-left: 20vw;
 }
 .loader{
  width: 100%;
@@ -209,7 +209,29 @@ justify-content: center;
  display: flex;
  align-items: center;
  justify-content:center ;
- bottom: 0;
+ flex-direction: column;
+ 
+}
+.LoaderprogressCont{
+ margin-top: 20px;
+ display: flex;
+ align-items: center;
+ justify-content:center ;
+}
+.Loaderprogress{ 
+position: absolute;
+ width: 80vw;
+ height: 10px;
+ border-radius: 8px;
+ background-color: #000;
+
+}
+.LoaderprogressBar{
+ position: relative;
+ width: 0;
+ height: 10px;
+ border-radius: 8px;
+ background-color: #dadada;
 }
 .number .h4{
  
@@ -243,10 +265,15 @@ overflow: hidden;
 
 .AntDets h4{ 
  overflow: hidden;
+ color: #000;
 } 
+.AntDets p{
+ color: #000;
+}
 
 .imgAndText h4{ 
  overflow: hidden;
+  color: #000;
 } 
 
 .page3{
@@ -276,7 +303,186 @@ margin-top: -9px;
 
 .page4{
  width: 100%;
- height: 100vh;
+ height: 30vh;
  background-color: #fff;
  color: #000;
+ text-align: center;
+}
+.page4 h3{
+ font-size: 45px;
+ text-transform: capitalize;
+ font-weight: 600;
+ margin-top: 25px;
+}
+
+.barPage{
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ display: none;
+ opacity: 0;
+ background-color: #0F0D0D;
+ z-index: 10;
+}
+.page5{
+ width: 100%;
+min-height: 100vh;
+ background-color: #fff;
+}
+
+.TeamCont{
+ display: flex;
+
+ flex-wrap: wrap;
+}
+
+.TeamImgLeaderCont,
+.TeamPlayer1Cont,
+.TeamPlayer2Cont,
+.TeamPlayer3Cont,
+.TeamPlayer4Cont {
+    width: 50%;
+    height: 150px;
+    transition: all .55s ease;
+    
+}
+
+.TeamLeaderCont,
+.TeamPlayer1Container,
+.TeamPlayer2Container,
+.TeamPlayer3Container,
+.TeamPlayer4Container {
+    width: 150px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 20px;
+}
+
+.TeamImgLeaderCont img,
+.TeamPlayer1Cont img,
+.TeamPlayer2Cont img,
+.TeamPlayer3Cont img,
+.TeamPlayer4Cont img {
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.TeamLeaderText,
+.TeamPlayer1Text,
+.TeamPlayer2Text,
+.TeamPlayer3Text,
+.TeamPlayer4Text {
+   
+   display: flex;
+   align-items: center; 
+   text-align: center;
+   justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.TeamLeaderText i,
+.TeamPlayer1Text i,
+.TeamPlayer2Text i,
+.TeamPlayer3Text i,
+.TeamPlayer4Text i{
+ color: #8098ff;
+ font-size: 20px;
+}
+.TeamLeaderText h4,
+.TeamPlayer1Text h4,
+.TeamPlayer2Text h4,
+.TeamPlayer3Text h4,
+.TeamPlayer4Text h4 {
+    margin-left: 4px;
+    text-transform: uppercase;
+}
+
+.AgTeams h3 {
+    color: #000;
+}
+.TeamName{
+ padding: 0 15px;
+ 
+}
+.TeamName h3{
+ font-size: 25px;
+overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis; 
+}
+.page6{
+ width: 100%;
+ height: 40vh;
+ background-color: #fff;
+ 
+}
+.page6 h3{
+ font-size: 25px;
+}
+.page6 p{
+ color: #000;
+}
+.page6 a{
+ text-decoration: none;
+}
+
+footer{
+ width: 100%;
+ height: 50vh;
+ background-color: #37415A;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
+
+.OrgDets{
+ padding-left: 20px;
+ text-align: justify;
+}
+.OrgDets i{
+ color: #a5ff80;
+ padding-right:5px ;
+}
+. OrgServices{
+ text-align: justify;
+}
+.OrgServices h3,p{
+ color: #fff;
+ 
+}
+.OrgDets h3{
+ color: #fff;
+}
+.OrgDets p{
+ color: #fff;
+}
+.OrgServices p{
+ color: #fff;
+}
+
+.TeamCont h4{
+ color: #000;
+}
+@media (min-height: 1050px) {
+  .card {
+    width: 80%;
+    height: 90vh;
+  }
+
+@media (min-height: 750px) {
+  .card {
+    width: 75%;
+    height: 70vh;
+  }
+  
+  @media (min-height: 480px) {
+  .card {
+    width: 90%;
+    height: 50vh;
+  }
 }

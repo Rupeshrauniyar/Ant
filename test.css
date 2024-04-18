@@ -1,0 +1,110 @@
+@font-face {
+    font-family: neu;
+    src: url(./TT.ttf);
+}
+@font-face {
+    font-family: neu;
+    src: url(./all2.otf);
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: neu;
+ scroll-behavior: smooth;
+}
+body{
+ background-color: #0F0D0D;
+ color: #fff;
+ scroll-behavior: smooth;
+}
+.page5{
+width: 100%;
+ min-height: 100vh;
+ background-color: #fff;
+}
+
+.TeamCont{
+ display: flex;
+ align-items: center;
+justify-content: center;
+
+padding:0 10px ;
+}
+.TeamImgLeaderCont{
+    width: 80%;
+    height: 250px;
+    transition: all .55s ease;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.TeamPlayer1Cont{
+    width: 80%;
+    height: 250px;
+    transition: all .55s ease;
+    margin: 10px;
+    overflow: hidden;
+}
+.TeamPlayer2Cont{
+    width: 80%;
+    height: 250px;
+    transition: all .55s ease;
+    margin: 10px;
+    overflow: hidden;
+}
+.TeamPlayer3Cont{
+    width: 80%;
+    height: 250px;
+    transition: all .55s ease;
+    margin: 10px;
+    overflow: hidden;
+}
+.TeamPlayer4Cont{
+    width: 80%;
+    height: 250px;
+    transition: all .55s ease;
+    margin: 10px;
+    overflow: hidden;
+    
+}
+.TeamImgLeaderCont img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius:50px;
+
+}
+.TeamPlayer1Cont img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius:50px;
+
+}
+.TeamPlayer2Cont img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius:50px;
+ 
+}
+.TeamPlayer3Cont img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius:50px;
+
+}
+.TeamPlayer4Cont img{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius:50px;
+ 
+}
+
+h2{
+ color: #000;
+}

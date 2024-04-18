@@ -34,13 +34,14 @@ ScrollTrigger.scrollerProxy("main", {
 var ownerArr = 
 [
 {img:"https://antorgnepal.com/wp-content/uploads/2024/03/sabin-768x1024.jpg",title:"Leader",name:"Sabin Timalsina"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/Suman-KC-CFO-150x150.jpg",title:"Cheif Financial Officer",name:"Suman Kc"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/Sakshyam-150x150.jpg",title:"Managing Director",name:"Sakshyam"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/Prakash-150x150.jpg",title:"Chief Technology Officer",name:"Prakash"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/Minaj-DIrector-e1710406896361-150x150.jpg",title:"Business Analyst",name:"Mianj"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/Beny-Khadka-e1710470905715-150x150.jpg",title:"Marketing Manager",name:"Benny Khadka"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/barsha-1-e1710054179298-150x150.jpg",title:"Director",name:"Barsha"},
-{img:"https://antorgnepal.com/wp-content/uploads/2024/03/ag-binayal-150x150.jpeg",title:"Director",name:"Binayal"},
+{img:"./suman.jpg",title:"Cheif Financial Officer",name:"Suman Kc"},
+{img:"./sakshyam.jpg",title:"Managing Director",name:"Sakshyam Dhakal"},
+{img:"./user.jpg",title:"Chief Technology Officer",name:"Prashant KC"},
+{img:"./prakash.jpg",title:"Chief Technology Officer",name:"Prakash Subedi"},
+{img:"./minaj.jpg",title:"Business Analyst",name:"Minaj Uddin"},
+{img:"./benny.jpg",title:"Marketing Manager",name:"Beni Khadka"},
+{img:"./barsha.jpg",title:"Director",name:"Barsha Khanal"},
+{img:"./binayak.jpg",title:"Director",name:"Binayak Thapa"},
 
 ]
 
@@ -52,7 +53,9 @@ ownerArr.forEach(item =>{
 ownerClutter += 
 ` <div class="owners">
 <div class="card">
-    <img src="${item.img}" alt="Image Description">
+ <div class="cardImg">
+    <img src="${item.img}" alt="${item.name}">
+    </div>
     <div class="card-content">
        <h1>${item.name}</h1>
         <h2>${item.title}</h2>
@@ -70,20 +73,20 @@ scrollTrigger : {
 trigger:'.AntDets',
 scroller:"main",
 start:'200vh top',
-end:'1000vh 10vh',
+end:'2700vh 10vh',
 scrub:2,
-pin:true
+pin:true,
 }
 })
     gsap.from(".page1Content p", {
         y: 100,        
         ease: "power4.inOut",
         duration: 2,
-        opacity: 0,
+        opacity: 5,
         stagger:{
          amount:0.5,
         },
-        delay:5,
+        delay:4.8,
     });
 
 
@@ -99,7 +102,7 @@ stagger:{
 ease:"power4.inOut",
 opacity:0,
 duration:2,
- delay:5,
+ delay:4.8,
 })
 
 gsap.from('.page1ContentCont span',{
@@ -110,7 +113,7 @@ stagger:{
 ease:"power4.inOut",
 duration:2,
 opacity:0,
- delay:5,
+ delay:4.8,
 })
 
 
@@ -142,12 +145,18 @@ scrub:4,
 
 
 tl2.from('.owners',{
-y:"50px", 
+y:"300px", 
 stagger:{
 amount:0.5,
 },
 opacity:0,
 },"same2")
+
+
+
+
+
+
 
 gsap.from('.number h3',{
 y:150, 
@@ -166,7 +175,7 @@ stagger:{
  amount:0.5,
 },
 ease:"power4.inOut",
-delay:5,
+delay:4.8,
 duration:2
 })
 
@@ -180,6 +189,14 @@ ease:"power4.inOut",
 delay:4,
 })
 
+gsap.to(".LoaderprogressBar",{
+duration:6,
+width:"100%",
+ease:"power4.inOut",
+stagger:{
+ amount:0.5,
+},
+})
 
 
 
@@ -195,7 +212,7 @@ number=100;
 }
 
 
-numberVal.innerHTML= number;    
+numberVal.innerHTML= number + "%";    
   } 
 }
 setTimeout(() => {
@@ -205,28 +222,38 @@ setTimeout(() => {
 
 
 
-var colorTheme = document.querySelector('#colorTheme');
-var body = document.querySelector('body');
-var page3 = document.querySelector('.page3');
-var page4 = document.querySelector('.page4');
-var card = document.querySelector('.card');
 
-let colorFlag = 0
-colorTheme.addEventListener("click",function(){
-if (colorFlag === 0) {
- body.style.backgroundColor="#fff";
- body.style.color="#000"; 
- card.style.backgroundColor="#000"; 
- card.style.color="#fff"; 
- colorFlag=1;
-}
-else{
- body.style.backgroundColor="#000";
- body.style.color="#fff"; 
- card.style.backgroundColor="#fff"; 
- card.style.color="#000"; 
-  colorFlag=0; 
-}
- 
- 
+
+
+
+let barFlag = 0;
+var bar = document.querySelector('#bar');
+var barPage = document.querySelector('.abrPage')
+bar.addEventListener('click', function (){
+ if (barFlag === 0) {
+barFlag=1;
+bar.classList="ri-close-line";
+gsap.to(".barPage",{
+ opacity:1,
+ display:"initial",
+ duration:1,
+ stagger:{
+ amount:0.5,
+},
+ease:"power4.inOut",
+})  
+ }
+ else {
+gsap.to(".barPage",{
+ opacity:0,
+ duration:0.5,
+ display:"none",
+ stagger:{
+ amount:0.2,
+},
+ease:"power4.inOut",
+})  
+barFlag=0; 
+bar.classList="ri-menu-line"; 
+ }
 })

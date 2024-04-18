@@ -20,18 +20,26 @@
    <h3 id="numberValue">0</h3>
    </div>
   </div>
+  
+  <div class="LoaderprogressCont">
+ <div class="Loaderprogress">
+  <div class="LoaderprogressBar"></div>
+ </div>
 </div> 
- 
 
+</div> 
+  
+<div class="barPage"></div>
 
-
+<div id="#top"></div> 
 
  <nav>
   <div class="logo">
-<img src="logo.png" alt=""></img>
+   
+<img src="navLogo.png" alt=""></img>
   </div>
   <div class="navRght">
-  <i class="ri-sun-line" id="colorTheme"></i>
+ 
   <i class="ri-menu-line" id="bar"></i>
   </div>
  </nav>
@@ -55,18 +63,20 @@
   <h4><p>Budhanilakantha,Kathmandu</p></h4>
   <div class="imgAndText">
   <h4><h3>Ant Gamers Official</h3> </h4>
-    <img src="https://assets-global.website-files.com/65e979c115f42e2ed4460f6e/65e979c115f42e2ed446101d_Gardenia%20White%201.webp" loading="lazy" alt=""><div class="progressCont">
+    <img src="https://assets-global.website-files.com/65e979c115f42e2ed4460f6e/65e979c115f42e2ed446101d_Gardenia%20White%201.webp" loading="lazy" alt="">
+    <div class="progressCont">
  <div class="progress">
   <div class="progressBar"></div>
  </div>
-</div> </div>
+</div> 
+</div>
    
 
 </div> 
 
 
 
-<div class="page2">
+<div class="page2" data-scroll-speed="5">
  <div class="ownerContainer">
  <div class="owners">
  </div>
@@ -74,7 +84,7 @@
  
  
  
-<div class="page3">
+ <div class="page3">
 <h3>Our Organization Provides ./</h3>
 
 
@@ -92,10 +102,11 @@
 </div>
 
 
-<h2>Technical Support./</h2>
+<h2>Technical Support./ </h2>
 <div class="page3Content">
 <p>ANT Organization’s Technical Support services offer expert assistance and guidance to individuals and organizations seeking help with various technology-related issues.
 </p>
+
 </div>
 
 
@@ -103,7 +114,40 @@
 </div> 
 
 
-<div class="page4"></div>
+<div class="page4">
+ <h3>Ant Gamers List</h3>
+</div>
+
+
+<div class="page5"></div>
+
+<div class="page6">
+ <h3>Want To Join Ant Organisation?</h3>
+ <p>Contact/Message Us On Facebook
+ <a href="https://www.facebook.com/antorgnepal">Link <i class="ri-link"></i></a></p>
+</div>
+
+<footer>
+
+
+<div class="OrgDets">
+<h3>Ant Organization</h3>
+<p> <i class="ri-map-pin-2-line"></i>4400 Budhanilkantha, Kathmandu</p> 
+<p> <i class="ri-phone-fill"></i>+977 9869606819 </p> 
+<p> <i class="ri-mail-line"></i>info@antorgnepal.com</p> 
+</div>
+<div class="OrgServices">
+<h3>Ant Organization Services</h3>
+<p>- AON Technical Support</p> 
+<p>- AON Education Guide</p> 
+<p>- AON Gaming Esports</p> 
+<p>- AON Digital Store</p> 
+</div>
+
+
+
+ 
+</footer>
  </main>
 
 
@@ -125,12 +169,128 @@
 
 
 
+<script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyBCWiwH-BaIIyI95MVOKDMDSKcj6uIHsUM",
+    authDomain: "ant-gamers-official-firestore.firebaseapp.com",
+    projectId: "ant-gamers-official-firestore",
+    storageBucket: "ant-gamers-official-firestore.appspot.com",
+    messagingSenderId: "508534844904",
+    appId: "1:508534844904:web:302621ed35c6347741c85d"
+  };
+
+ 
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const teamCollection = collection(db, "Teams");
+
+ 
+ const fetchData = async () => {
+  try {
+    
+    const querySnapshot = await getDocs(teamCollection);
+
+    let clutter = "";
+    const page5 = document.querySelector(".page5"); 
+
+    querySnapshot.forEach((doc) => {
+    
+    
+      const leaderPic = doc.data().LeaderPic;
+      const Player1Pic = doc.data().Player1Pic;
+      const Player2Pic = doc.data().Player2Pic;
+      const Player3Pic = doc.data().Player3Pic;
+      const Player4Pic = doc.data().Player4Pic;
+      clutter += `
+      
+<div class="AgTeams"> 
+ <div class="TeamName">
+<h3>- ${doc.data().TeamName}</h3> 
+</div>
+<div class="TeamCont">
+
+
+<div class="TeamLeaderCont">
+<div class="TeamImgLeaderCont">
+<img src="${leaderPic}" alt="">
+</div>
+<div class="TeamLeaderText">
+<i class="ri-id-card-fill"></i><h4>${doc.data().LeaderName}</h4>
+</div>
+</div>
 
 
 
+<div class="TeamPlayer1Container">
+<div class="TeamPlayer1Cont">
+<img src="${Player1Pic}" alt="">
+</div>
+<div class="TeamPlayer1Text">
+<i class="ri-id-card-fill"></i> <h4>${doc.data().Player1Name}</h4>
+</div>
+</div>
+
+<div class="TeamPlayer2Container">
+<div class="TeamPlayer2Cont">
+<img src="${Player2Pic}" alt="">
+</div>
+<div class="TeamPlayer2Text">
+<i class="ri-id-card-fill"></i><h4>${doc.data().Player2Name}</h4>
+</div>
+</div>
+
+
+
+<div class="TeamPlayer3Container">
+<div class="TeamPlayer3Cont">
+<img src="${Player3Pic}" alt="">
+</div>
+<div class="TeamPlayer3Text">
+<i class="ri-id-card-fill"></i><h4>${doc.data().Player3Name}</h4>
+</div>
+</div>
+
+
+<div class="TeamPlayer4Container">
+<div class="TeamPlayer4Cont">
+<img src="${Player4Pic}" alt="">
+</div>
+<div class="TeamPlayer4Text">
+<i class="ri-id-card-fill"></i><h4>${doc.data().Player4Name}</h4>
+</div>
+</div>
+
+ 
+</div> 
+</div> 
+      
+      
+      
+</div>      
+      
+      `;
+    });
+
+    page5.innerHTML = clutter;
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+  }
+};
+
+fetchData();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="index.js"></script> 
+
+
+
 </body>
+
+
 </html>
